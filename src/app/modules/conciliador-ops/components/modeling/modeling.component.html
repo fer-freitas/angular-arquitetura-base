@@ -1,0 +1,24 @@
+<form [formGroup]="modelingForm" (ngSubmit)="save(modelingForm)" class="ngx-form" novalidate>
+    <div class="form-group">
+        <label class="form-label" for="identifiers">Identificadores: *</label>
+        <input type="text" class="form-control" formControlName="identifiers" placeholder="Identificadores" />
+        <div *ngIf="modelingForm.controls['identifiers'].invalid && (modelingForm.controls['identifiers'].dirty || modelingForm.controls['identifiers'].touched)" class="alert">
+            <div *ngIf="modelingForm.controls['identifiers'].errors.required">
+                Identifiers is required.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="values">Valores: *</label>
+        <input type="text" class="form-control" formControlName="values" placeholder="Valores" />
+        <div *ngIf="modelingForm.controls['values'].invalid && (modelingForm.controls['values'].dirty || modelingForm.controls['values'].touched)" class="alert">
+            <div *ngIf="modelingForm.controls['values'].errors.required">
+                Values is required.</div>
+        </div>
+    </div>
+
+    <div class="col-md-12 form-group f1-buttons mt-3">
+        <button class="btn btn-dark btn-previous" type="button" awPreviousStep>Previous</button>
+        <button class="btn btn-primary btn-next" [disabled]="!modelingForm.valid" awNextStep> Next
+        </button>
+    </div>
+</form>

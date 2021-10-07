@@ -1,0 +1,38 @@
+<div class="col-sm-12 col-lg-12">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between b-l-primary border-2">
+            <div class="header-title">
+                <h4 class="card-title">Novo Quebra de Sigilo</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="form-card text-start">
+                <form [formGroup]="processForm" (ngSubmit)="execute(processForm)" novalidate>
+
+                    <div class="form-group dropzone-custom">
+                        <div class="dropzone dropzone-primary" [dropzone]="config" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (init)="onUploadInit($event)">
+                            <div class="dz-message needsclick">
+                                <i class="icon-cloud-up"></i>
+                                <h6>Drop files here or click to upload.</h6>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="emails">E-mails para notificar: *</label>
+                        <input type="email" class="form-control" formControlName="emails" placeholder="E-mails" />
+                        <div *ngIf="processForm.controls['emails'].invalid && (processForm.controls['emails'].dirty || processForm.controls['emails'].touched)" class="alert">
+                            <div *ngIf="processForm.controls['emails'].errors.required">
+                                Insert emails separated by ';'.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group f1-buttons text-right">
+                        <button type="submit" name="Executar" class="btn btn-primary next action-button float-end" value="Executar" [disabled]="!processForm.valid">Executar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

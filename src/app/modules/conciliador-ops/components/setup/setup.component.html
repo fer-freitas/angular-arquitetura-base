@@ -1,0 +1,27 @@
+<form [formGroup]="setupForm" (ngSubmit)="save(setupForm)" class="ngx-form" novalidate>
+    <div class="form-group">
+        <label class="control-label" for="modelName">Model Name</label>
+        <input type="text" formControlName="modelName" class="form-control" placeholder="Enter Model Name..">
+        <div *ngIf="setupForm.controls['modelName'].invalid && (setupForm.controls['modelName'].dirty || setupForm.controls['modelName'].touched)" class="alert">
+            <div *ngIf="setupForm.controls['modelName'].errors.required">
+                Model Name is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="status">Status</label>
+        <select class="form-select" aria-label="Enter Status.." formControlName="status">
+            <option value="1">Ativo</option>
+            <option value="2">Inativo</option>
+        </select>
+        <div *ngIf="setupForm.controls['status'].invalid && (setupForm.controls['status'].dirty || setupForm.controls['status'].touched)" class="alert">
+            <div *ngIf="setupForm.controls['status'].errors.required">
+                Status is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group f1-buttons">
+        <button class="btn btn-primary btn-next" [disabled]="!setupForm.valid" awNextStep> Next
+        </button>
+    </div>
+</form>

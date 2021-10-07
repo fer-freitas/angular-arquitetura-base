@@ -1,0 +1,466 @@
+<form [formGroup]="advancedForm" (ngSubmit)="onSubmit()" class="ngx-form" novalidate>
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <h3>Agendamento:</h3>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="startDate">Início: *</label>
+                <input type="date" class="form-control" formControlName="startDate" placeholder="Início" />
+                <div *ngIf="advancedForm.controls['startDate'].invalid && (advancedForm.controls['startDate'].dirty || advancedForm.controls['startDate'].touched)" class="alert">
+                    <div *ngIf="advancedForm.controls['startDate'].errors.required">
+                        Start Date is required.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="endDate">Fim: *</label>
+                <input type="date" class="form-control" formControlName="endDate" placeholder="Identificadores" />
+                <div *ngIf="advancedForm.controls['endDate'].invalid && (advancedForm.controls['endDate'].dirty || advancedForm.controls['endDate'].touched)" class="alert">
+                    <div *ngIf="advancedForm.controls['endDate'].errors.required">
+                        End Date is required.</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="control-label" for="timeZone">Fuso horário: *</label>
+                <select class="form-select" aria-label="Enter Time Zone.." formControlName="timeZone">
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Buenos Aires
+                    </option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - São Paulo</option>
+                    <option value="1">(GMT+00:00) Horário Universal Coordenado</option>
+                    <option value="1">(GMT-11:00) Horário de Niue</option>
+                    <option value="1">(GMT-11:00) Horário Padrão de Samoa</option>
+                    <option value="1">(GMT-10:00) Horário do Taiti</option>
+                    <option value="1">(GMT-10:00) Horário Padrão das Ilhas Cook</option>
+                    <option value="1">(GMT-10:00) Horário Padrão do Havaí e Ilhas Aleutas</option>
+                    <option value="1">(GMT-09:30) Horário das Marquesas</option>
+                    <option value="1">(GMT-09:00) Horário de Gambier</option>
+                    <option value="1">(GMT-09:00) Horário do Havaí e Ilhas Aleutas (Adak)</option>
+                    <option value="1">(GMT-08:00) Horário de Pitcairn</option>
+                    <option value="1">(GMT-08:00) Horário do Alasca - Anchorage</option>
+                    <option value="1">(GMT-08:00) Horário do Alasca - Juneau</option>
+                    <option value="1">(GMT-08:00) Horário do Alasca - Metlakatla</option>
+                    <option value="1">(GMT-08:00) Horário do Alasca - Nome</option>
+                    <option value="1">(GMT-08:00) Horário do Alasca - Sitka</option>
+                    <option value="1">(GMT-08:00) Horário do Alasca - Yakutat</option>
+                    <option value="1">(GMT-07:00) Horário do Pacífico - Los Angeles</option>
+                    <option value="1">(GMT-07:00) Horário do Pacífico - Tijuana</option>
+                    <option value="1">(GMT-07:00) Horário do Pacífico - Vancouver</option>
+                    <option value="1">(GMT-07:00) Horário Padrão das Montanhas - Creston</option>
+                    <option value="1">(GMT-07:00) Horário Padrão das Montanhas - Dawson</option>
+                    <option value="1">(GMT-07:00) Horário Padrão das Montanhas - Dawson Creek
+                    </option>
+                    <option value="1">(GMT-07:00) Horário Padrão das Montanhas - Fort Nelson
+                    </option>
+                    <option value="1">(GMT-07:00) Horário Padrão das Montanhas - Phoenix</option>
+                    <option value="1">(GMT-07:00) Horário Padrão das Montanhas - Whitehorse</option>
+                    <option value="1">(GMT-07:00) Horário Padrão do Pacífico Mexicano</option>
+                    <option value="1">(GMT-06:00) Horário das Montanhas - Boise</option>
+                    <option value="1">(GMT-06:00) Horário das Montanhas - Cambridge Bay</option>
+                    <option value="1">(GMT-06:00) Horário das Montanhas - Denver</option>
+                    <option value="1">(GMT-06:00) Horário das Montanhas - Edmonton</option>
+                    <option value="1">(GMT-06:00) Horário das Montanhas - Inuvik</option>
+                    <option value="1">(GMT-06:00) Horário das Montanhas - Ojinaga</option>
+                    <option value="1">(GMT-06:00) Horário das Montanhas - Yellowknife</option>
+                    <option value="1">(GMT-06:00) Horário de Galápagos</option>
+                    <option value="1">(GMT-06:00) Horário do Pacífico Mexicano - Chihuahua</option>
+                    <option value="1">(GMT-06:00) Horário do Pacífico Mexicano - Mazatlan</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - Belize</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - Costa Rica</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - El Salvador</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - Guatemala</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - Manágua</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - Regina</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - Swift Current</option>
+                    <option value="1">(GMT-06:00) Horário Padrão Central - Tegucigalpa</option>
+                    <option value="1">(GMT-05:00) Horário Central - Bahia de Banderas</option>
+                    <option value="1">(GMT-05:00) Horário Central - Beulah, Dakota do Norte</option>
+                    <option value="1">(GMT-05:00) Horário Central - Center, Dakota do Norte</option>
+                    <option value="1">(GMT-05:00) Horário Central - Chicago</option>
+                    <option value="1">(GMT-05:00) Horário Central - Cidade do México</option>
+                    <option value="1">(GMT-05:00) Horário Central - Knox, Indiana</option>
+                    <option value="1">(GMT-05:00) Horário Central - Matamoros</option>
+                    <option value="1">(GMT-05:00) Horário Central - Menominee</option>
+                    <option value="1">(GMT-05:00) Horário Central - Mérida</option>
+                    <option value="1">(GMT-05:00) Horário Central - Monterrey</option>
+                    <option value="1">(GMT-05:00) Horário Central - New Salen, Dakota do Norte
+                    </option>
+                    <option value="1">(GMT-05:00) Horário Central - Rainy River</option>
+                    <option value="1">(GMT-05:00) Horário Central - Rankin Inlet</option>
+                    <option value="1">(GMT-05:00) Horário Central - Resolute</option>
+                    <option value="1">(GMT-05:00) Horário Central - Tell City, Indiana</option>
+                    <option value="1">(GMT-05:00) Horário Central - Winnipeg</option>
+                    <option value="1">(GMT-05:00) Horário da Ilha de Páscoa</option>
+                    <option value="1">(GMT-05:00) Horário do Equador</option>
+                    <option value="1">(GMT-05:00) Horário Padrão da Colômbia</option>
+                    <option value="1">(GMT-05:00) Horário Padrão do Acre - Eirunepé</option>
+                    <option value="1">(GMT-05:00) Horário Padrão do Acre - Rio Branco</option>
+                    <option value="1">(GMT-05:00) Horário Padrão do Leste - Atikokan</option>
+                    <option value="1">(GMT-05:00) Horário Padrão do Leste - Cancún</option>
+                    <option value="1">(GMT-05:00) Horário Padrão do Leste - Jamaica</option>
+                    <option value="1">(GMT-05:00) Horário Padrão do Leste - Panamá</option>
+                    <option value="1">(GMT-05:00) Horário Padrão do Peru</option>
+                    <option value="1">(GMT-04:00) Horário da Bolívia</option>
+                    <option value="1">(GMT-04:00) Horário da Guiana</option>
+                    <option value="1">(GMT-04:00) Horário da Venezuela</option>
+                    <option value="1">(GMT-04:00) Horário de Cuba</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Detroit</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Grand Turk</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Indianápolis</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Iqaluit</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Louisville</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Marengo, Indiana</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Monticello, Kentucky</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Nassau</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Nipigon</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Nova York</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Pangnirtung</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Petersburg, Indiana</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Porto Príncipe</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Thunder Bay</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Toronto</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Vevay, Indiana</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Vincennes, Indiana</option>
+                    <option value="1">(GMT-04:00) Horário do Leste - Winamac, Indiana</option>
+                    <option value="1">(GMT-04:00) Horário do Paraguai</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Amazonas - Boa Vista</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Amazonas - Campo Grande</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Amazonas - Cuiabá</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Amazonas - Manaus</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Amazonas - Porto Velho</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Atlântico - Barbados</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Atlântico - Blanc-Sablon
+                    </option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Atlântico - Curaçao</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Atlântico - Martinica</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Atlântico - Port of Spain
+                    </option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Atlântico - Porto Rico</option>
+                    <option value="1">(GMT-04:00) Horário Padrão do Atlântico - Santo Domingo
+                    </option>
+                    <option value="1">(GMT-03:00) Horário da Guiana Francesa</option>
+                    <option value="1">(GMT-03:00) Horário de Rothera</option>
+                    <option value="1">(GMT-03:00) Horário do Atlântico - Bermudas</option>
+                    <option value="1">(GMT-03:00) Horário do Atlântico - Glace Bay</option>
+                    <option value="1">(GMT-03:00) Horário do Atlântico - Goose Bay</option>
+                    <option value="1">(GMT-03:00) Horário do Atlântico - Halifax</option>
+                    <option value="1">(GMT-03:00) Horário do Atlântico - Moncton</option>
+                    <option value="1">(GMT-03:00) Horário do Atlântico - Thule</option>
+                    <option value="1">(GMT-03:00) Horário do Chile</option>
+                    <option value="1">(GMT-03:00) Horário do Suriname</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Buenos Aires
+                    </option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Catamarca</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Córdoba</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Jujuy</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - La Rioja</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Mendoza</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Rio Gallegos
+                    </option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Salta</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - San Juan</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - San Luis</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Tucumã</option>
+                    <option value="1">(GMT-03:00) Horário Padrão da Argentina - Ushuaia</option>
+                    <option value="1">(GMT-03:00) Horário Padrão das Ilhas Malvinas</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - Araguaína</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - Bahia</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - Belém</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - Fortaleza</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - Maceió</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - Recife</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - Santarém</option>
+                    <option value="1">(GMT-03:00) Horário Padrão de Brasília - São Paulo</option>
+                    <option value="1">(GMT-03:00) Horário Padrão do Uruguai</option>
+                    <option value="1">(GMT-03:00) Horário Palmer</option>
+                    <option value="1">(GMT-03:00) Horário Punta Arenas</option>
+                    <option value="1">(GMT-02:30) Horário da Terra Nova</option>
+                    <option value="1">(GMT-02:00) Horário da Geórgia do Sul</option>
+                    <option value="1">(GMT-02:00) Horário da Groenlândia Ocidental</option>
+                    <option value="1">(GMT-02:00) Horário de São Pedro e Miquelão</option>
+                    <option value="1">(GMT-02:00) Horário Padrão de Fernando de Noronha</option>
+                    <option value="1">(GMT-01:00) Horário Padrão de Cabo Verde</option>
+                    <option value="1">(GMT+00:00) Horário da Groelândia Oriental</option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich</option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich - Abidjan
+                    </option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich - Acra</option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich - Bissau
+                    </option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich - Danmarkshavn
+                    </option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich - Monróvia
+                    </option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich - Reykjavík
+                    </option>
+                    <option value="1">(GMT+00:00) Horário do Meridiano de Greenwich - São Tomé
+                    </option>
+                    <option value="1">(GMT+00:00) Horário dos Açores</option>
+                    <option value="1">(GMT+00:00) Horário Universal Coordenado</option>
+                    <option value="1">(GMT+01:00) Horário da Europa Ocidental - Canárias</option>
+                    <option value="1">(GMT+01:00) Horário da Europa Ocidental - Ilhas Faroé</option>
+                    <option value="1">(GMT+01:00) Horário da Europa Ocidental - Lisboa</option>
+                    <option value="1">(GMT+01:00) Horário da Europa Ocidental - Madeira</option>
+                    <option value="1">(GMT+01:00) Horário Irlanda</option>
+                    <option value="1">(GMT+01:00) Horário Marrocos</option>
+                    <option value="1">(GMT+01:00) Horário Padrão da África Ocidental - Lagos
+                    </option>
+                    <option value="1">(GMT+01:00) Horário Padrão da África Ocidental - N’Djamena
+                    </option>
+                    <option value="1">(GMT+01:00) Horário Padrão da Europa Central - Argel</option>
+                    <option value="1">(GMT+01:00) Horário Padrão da Europa Central - Túnis</option>
+                    <option value="1">(GMT+01:00) Horário Reino Unido</option>
+                    <option value="1">(GMT+01:00) Horário Saara Ocidental</option>
+                    <option value="1">(GMT+02:00) Horário da África Central - Cartum</option>
+                    <option value="1">(GMT+02:00) Horário da África Central - Juba</option>
+                    <option value="1">(GMT+02:00) Horário da África Central - Maputo</option>
+                    <option value="1">(GMT+02:00) Horário da África Central - Windhoek</option>
+                    <option value="1">(GMT+02:00) Horário da África do Sul</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Amsterdã</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Andorra</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Belgrado</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Berlim</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Bruxelas</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Budapeste</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Ceuta</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Copenhague</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Estocolmo</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Gibraltar</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Luxemburgo</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Madri</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Malta</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Mônaco</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Oslo</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Paris</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Praga</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Roma</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Tirana</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Varsóvia</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Viena</option>
+                    <option value="1">(GMT+02:00) Horário da Europa Central - Zurique</option>
+                    <option value="1">(GMT+02:00) Horário Padrão da Europa Oriental - Cairo</option>
+                    <option value="1">(GMT+02:00) Horário Padrão da Europa Oriental - Kaliningrado
+                    </option>
+                    <option value="1">(GMT+02:00) Horário Padrão da Europa Oriental - Trípoli
+                    </option>
+                    <option value="1">(GMT+02:00) Horário Troll</option>
+                    <option value="1">(GMT+03:00) Horário da África Oriental</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Amã</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Atenas</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Beirute</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Bucareste</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Chisinau</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Damasco</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Gaza</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Hebron</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Helsinque</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Kiev</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Nicósia</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Riga</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Sófia</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Tallinn</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Uzhgorod</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Vilnius</option>
+                    <option value="1">(GMT+03:00) Horário da Europa Oriental - Zaporizhia</option>
+                    <option value="1">(GMT+03:00) Horário de Israel</option>
+                    <option value="1">(GMT+03:00) Horário de Syowa</option>
+                    <option value="1">(GMT+03:00) Horário Famagusta</option>
+                    <option value="1">(GMT+03:00) Horário Kirov</option>
+                    <option value="1">(GMT+03:00) Horário Padrão da Arábia - Bagdá</option>
+                    <option value="1">(GMT+03:00) Horário Padrão da Arábia - Catar</option>
+                    <option value="1">(GMT+03:00) Horário Padrão da Arábia - Riade</option>
+                    <option value="1">(GMT+03:00) Horário Padrão de Moscou - Minsk</option>
+                    <option value="1">(GMT+03:00) Horário Padrão de Moscou - Moscou</option>
+                    <option value="1">(GMT+03:00) Horário Padrão de Moscou - Simferopol</option>
+                    <option value="1">(GMT+03:00) Horário Padrão de Volgogrado</option>
+                    <option value="1">(GMT+03:00) Horário Turquia</option>
+                    <option value="1">(GMT+03:30) Horário do Irã</option>
+                    <option value="1">(GMT+04:00) Horário Astracã</option>
+                    <option value="1">(GMT+04:00) Horário de Reunião</option>
+                    <option value="1">(GMT+04:00) Horário de Seicheles</option>
+                    <option value="1">(GMT+04:00) Horário do Golfo</option>
+                    <option value="1">(GMT+04:00) Horário Padrão da Armênia</option>
+                    <option value="1">(GMT+04:00) Horário Padrão da Geórgia</option>
+                    <option value="1">(GMT+04:00) Horário Padrão de Maurício</option>
+                    <option value="1">(GMT+04:00) Horário Padrão de Samara</option>
+                    <option value="1">(GMT+04:00) Horário Padrão do Arzeibaijão</option>
+                    <option value="1">(GMT+04:00) Horário Saratov</option>
+                    <option value="1">(GMT+04:00) Horário Ulianovsk</option>
+                    <option value="1">(GMT+04:30) Horário do Afeganistão</option>
+                    <option value="1">(GMT+05:00) Horário das Ilhas Maldivas</option>
+                    <option value="1">(GMT+05:00) Horário de Mawson</option>
+                    <option value="1">(GMT+05:00) Horário do Casaquistão Ocidental - Aktau</option>
+                    <option value="1">(GMT+05:00) Horário do Casaquistão Ocidental - Aktobe</option>
+                    <option value="1">(GMT+05:00) Horário do Casaquistão Ocidental - Atyrau</option>
+                    <option value="1">(GMT+05:00) Horário do Casaquistão Ocidental - Oral</option>
+                    <option value="1">(GMT+05:00) Horário do Casaquistão Ocidental - Qyzylorda
+                    </option>
+                    <option value="1">(GMT+05:00) Horário do Tajiquistão</option>
+                    <option value="1">(GMT+05:00) Horário dos Territórios Franceses do Sul e
+                        Antártida</option>
+                    <option value="1">(GMT+05:00) Horário Padrão de Ecaterimburgo</option>
+                    <option value="1">(GMT+05:00) Horário Padrão do Paquistão</option>
+                    <option value="1">(GMT+05:00) Horário Padrão do Turcomenistão</option>
+                    <option value="1">(GMT+05:00) Horário Padrão do Uzbequistão - Samarcanda
+                    </option>
+                    <option value="1">(GMT+05:00) Horário Padrão do Uzbequistão - Tashkent</option>
+                    <option value="1">(GMT+05:30) Horário Padrão da Índia - Calcutá</option>
+                    <option value="1">(GMT+05:30) Horário Padrão da Índia - Colombo</option>
+                    <option value="1">(GMT+05:45) Horário do Nepal</option>
+                    <option value="1">(GMT+06:00) Horário de Vostok</option>
+                    <option value="1">(GMT+06:00) Horário do Butão</option>
+                    <option value="1">(GMT+06:00) Horário do Casaquistão Oriental - Almaty</option>
+                    <option value="1">(GMT+06:00) Horário do Casaquistão Oriental - Qostanay
+                    </option>
+                    <option value="1">(GMT+06:00) Horário do Oceano Índico</option>
+                    <option value="1">(GMT+06:00) Horário do Quirguistão</option>
+                    <option value="1">(GMT+06:00) Horário Padrão de Bangladesh</option>
+                    <option value="1">(GMT+06:00) Horário Padrão de Omsk</option>
+                    <option value="1">(GMT+06:00) Horário Urumqi</option>
+                    <option value="1">(GMT+06:30) Horário das Ilhas Coco</option>
+                    <option value="1">(GMT+06:30) Horário de Mianmar</option>
+                    <option value="1">(GMT+07:00) Horário Barnaul</option>
+                    <option value="1">(GMT+07:00) Horário da Ilha Christmas</option>
+                    <option value="1">(GMT+07:00) Horário da Indochina - Bangkok</option>
+                    <option value="1">(GMT+07:00) Horário da Indochina - Cidade de Ho Chi Minh
+                    </option>
+                    <option value="1">(GMT+07:00) Horário da Indonésia Ocidental - Jacarta</option>
+                    <option value="1">(GMT+07:00) Horário da Indonésia Ocidental - Pontianak
+                    </option>
+                    <option value="1">(GMT+07:00) Horário de Davis</option>
+                    <option value="1">(GMT+07:00) Horário Padrão de Hovd</option>
+                    <option value="1">(GMT+07:00) Horário Padrão de Krasnoyarsk - Krasnoyarsk
+                    </option>
+                    <option value="1">(GMT+07:00) Horário Padrão de Krasnoyarsk - Novokuznetsk
+                    </option>
+                    <option value="1">(GMT+07:00) Horário Padrão de Novosibirsk</option>
+                    <option value="1">(GMT+07:00) Horário Tomsk</option>
+                    <option value="1">(GMT+08:00) Horário da Indonésia Central</option>
+                    <option value="1">(GMT+08:00) Horário da Malásia - Kuala Lumpur</option>
+                    <option value="1">(GMT+08:00) Horário da Malásia - Kuching</option>
+                    <option value="1">(GMT+08:00) Horário de Brunei Darussalam</option>
+                    <option value="1">(GMT+08:00) Horário Padrão da Austrália Ocidental</option>
+                    <option value="1">(GMT+08:00) Horário Padrão da China - Macau</option>
+                    <option value="1">(GMT+08:00) Horário Padrão da China - Xangai</option>
+                    <option value="1">(GMT+08:00) Horário Padrão das Filipinas</option>
+                    <option value="1">(GMT+08:00) Horário Padrão de Hong Kong</option>
+                    <option value="1">(GMT+08:00) Horário Padrão de Irkutsk</option>
+                    <option value="1">(GMT+08:00) Horário Padrão de Singapura</option>
+                    <option value="1">(GMT+08:00) Horário Padrão de Taipei</option>
+                    <option value="1">(GMT+08:00) Horário Padrão de Ulan Bator - Choibalsan</option>
+                    <option value="1">(GMT+08:00) Horário Padrão de Ulan Bator - Ulan Bator</option>
+                    <option value="1">(GMT+08:45) Horário Padrão da Austrália Centro-Ocidental
+                    </option>
+                    <option value="1">(GMT+09:00) Horário da Indonésia Oriental</option>
+                    <option value="1">(GMT+09:00) Horário de Palau</option>
+                    <option value="1">(GMT+09:00) Horário do Timor-Leste</option>
+                    <option value="1">(GMT+09:00) Horário Padrão da Coreia - Pyongyang</option>
+                    <option value="1">(GMT+09:00) Horário Padrão da Coreia - Seul</option>
+                    <option value="1">(GMT+09:00) Horário Padrão de Yakutsk - Chita</option>
+                    <option value="1">(GMT+09:00) Horário Padrão de Yakutsk - Khandyga</option>
+                    <option value="1">(GMT+09:00) Horário Padrão de Yakutsk - Yakutsk</option>
+                    <option value="1">(GMT+09:00) Horário Padrão do Japão</option>
+                    <option value="1">(GMT+09:30) Horário da Austrália Central - Adelaide</option>
+                    <option value="1">(GMT+09:30) Horário da Austrália Central - Broken Hill
+                    </option>
+                    <option value="1">(GMT+09:30) Horário Padrão da Austrália Central</option>
+                    <option value="1">(GMT+10:00) Horário da Austrália Oriental - Hobart</option>
+                    <option value="1">(GMT+10:00) Horário da Austrália Oriental - Macquarie</option>
+                    <option value="1">(GMT+10:00) Horário da Austrália Oriental - Melbourne</option>
+                    <option value="1">(GMT+10:00) Horário da Austrália Oriental - Sydney</option>
+                    <option value="1">(GMT+10:00) Horário de Chamorro</option>
+                    <option value="1">(GMT+10:00) Horário de Chuuk</option>
+                    <option value="1">(GMT+10:00) Horário de Dumont-d’Urville</option>
+                    <option value="1">(GMT+10:00) Horário de Papua-Nova Guiné</option>
+                    <option value="1">(GMT+10:00) Horário Padrão da Austrália Oriental - Brisbane
+                    </option>
+                    <option value="1">(GMT+10:00) Horário Padrão da Austrália Oriental - Lindeman
+                    </option>
+                    <option value="1">(GMT+10:00) Horário Padrão de Vladivostok - Ust-Nera</option>
+                    <option value="1">(GMT+10:00) Horário Padrão de Vladivostok - Vladivostok
+                    </option>
+                    <option value="1">(GMT+10:30) Horário de Lord Howe</option>
+                    <option value="1">(GMT+11:00) Horário Bougainville</option>
+                    <option value="1">(GMT+11:00) Horário Casey</option>
+                    <option value="1">(GMT+11:00) Horário da Ilha Norfolk</option>
+                    <option value="1">(GMT+11:00) Horário das Ilhas Salomão</option>
+                    <option value="1">(GMT+11:00) Horário de Kosrae</option>
+                    <option value="1">(GMT+11:00) Horário de Ponape</option>
+                    <option value="1">(GMT+11:00) Horário Padrão da Nova Caledônia</option>
+                    <option value="1">(GMT+11:00) Horário Padrão de Magadan</option>
+                    <option value="1">(GMT+11:00) Horário Padrão de Sacalina</option>
+                    <option value="1">(GMT+11:00) Horário Padrão de Vanuatu</option>
+                    <option value="1">(GMT+11:00) Horário Srednekolymsk</option>
+                    <option value="1">(GMT+12:00) Horário da Nova Zelândia</option>
+                    <option value="1">(GMT+12:00) Horário das Ilhas Gilberto</option>
+                    <option value="1">(GMT+12:00) Horário das Ilhas Marshall - Kwajalein</option>
+                    <option value="1">(GMT+12:00) Horário das Ilhas Marshall - Majuro</option>
+                    <option value="1">(GMT+12:00) Horário das Ilhas Wake</option>
+                    <option value="1">(GMT+12:00) Horário de Fiji</option>
+                    <option value="1">(GMT+12:00) Horário de Nauru</option>
+                    <option value="1">(GMT+12:00) Horário de Tuvalu</option>
+                    <option value="1">(GMT+12:00) Horário de Wallis e Futuna</option>
+                    <option value="1">(GMT+12:00) Horário Padrão de Petropavlovsk-Kamchatski
+                    </option>
+                    <option value="1">(GMT+12:00) Horário Padrão do Anadyr</option>
+                    <option value="1">(GMT+12:45) Horário de Chatham</option>
+                    <option value="1">(GMT+13:00) Horário das Ilhas Fênix</option>
+                    <option value="1">(GMT+13:00) Horário de Apia</option>
+                    <option value="1">(GMT+13:00) Horário de Tokelau</option>
+                    <option value="1">(GMT+13:00) Horário Padrão de Tonga</option>
+                    <option value="1">(GMT+14:00) Horário das Ilhas da Linha</option>
+                </select>
+                <div *ngIf="advancedForm.controls['timeZone'].invalid && (advancedForm.controls['timeZone'].dirty || advancedForm.controls['timeZone'].touched)" class="alert">
+                    <div *ngIf="advancedForm.controls['timeZone'].errors.required">
+                        Status is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="control-label" for="repetition">Repetição: *</label>
+                <select class="form-select" aria-label="Enter Repetição.." formControlName="repetition">
+                    <option value="0">Não se repete</option>
+                    <option value="1">Todos os dias</option>
+                    <option value="2">Semanal: cada sexta-feira</option>
+                    <option value="3">Mensal no(a) quarto(a) sexta-feira</option>
+                    <option value="4">Mensal nos(nas) últimos(as) sexta-feira</option>
+                    <option value="5">Anual em setembro 24</option>
+                    <option value="6">Todos os dias da semana (segunda a sexta-feira)</option>
+                    <option value="7">Personalizar...</option>
+                </select>
+                <div *ngIf="advancedForm.controls['repetition'].invalid && (advancedForm.controls['repetition'].dirty || advancedForm.controls['repetition'].touched)" class="alert">
+                    <div *ngIf="advancedForm.controls['repetition'].errors.required">
+                        Status is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Notificação:</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-label" for="emails">Emails: *</label>
+                <input type="email" class="form-control" formControlName="emails" placeholder="Emails" />
+                <div *ngIf="advancedForm.controls['emails'].invalid && (advancedForm.controls['emails'].dirty || advancedForm.controls['emails'].touched)" class="alert">
+                    <div *ngIf="advancedForm.controls['emails'].errors.required">
+                        Emails is required.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 form-group f1-buttons mt-3">
+        <button class="btn btn-dark btn-previous" type="button" awPreviousStep>Previous</button>
+        <button class="btn btn-primary btn-submit" type="submit" [disabled]="!advancedForm.valid" (click)="success()">Submit
+        </button>
+    </div>
+</form>

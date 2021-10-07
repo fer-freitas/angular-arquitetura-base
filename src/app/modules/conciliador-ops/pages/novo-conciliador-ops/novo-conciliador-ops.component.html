@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Novo Modelo de Conciliação</h5>
+                </div>
+                <div class="card-body step-indicator">
+                    <aw-wizard navBarLayout="large-filled-symbols">
+                        <aw-wizard-step [navigationSymbol]="{ symbol: '&#xf233;', fontFamily: 'FontAwesome ' }" stepTitle="Setup">
+                            <app-setup></app-setup>
+                        </aw-wizard-step>
+                        <aw-wizard-step [navigationSymbol]="{ symbol: '&#xf0c5;', fontFamily: 'FontAwesome' }" stepTitle="Arquivos">
+                            <app-file></app-file>
+                        </aw-wizard-step>
+                        <aw-wizard-step [navigationSymbol]="{ symbol: '&#xf1b3;', fontFamily: 'FontAwesome' }" stepTitle="Modelagem">
+                            <app-modeling></app-modeling>
+                        </aw-wizard-step>
+                        <aw-wizard-step [navigationSymbol]="{ symbol: '&#xf1de;', fontFamily: 'FontAwesome' }" stepTitle="Advanced">
+                            <app-advanced></app-advanced>
+                        </aw-wizard-step>
+                    </aw-wizard>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
